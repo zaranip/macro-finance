@@ -7,6 +7,7 @@ Q1: From 2000, pull US and European 10-year government bonds, public equity, hig
 
 Q2: Use pandas to display annual vols, ann_vols = returns.std() * np.sqrt(12), in table format.
 
+Q3-onwards:
 Data Sources: Instructed AI to examine the data source markdown and revise descriptions for accuracy, coverage dates, and instrument details. AI restructured the section into a table format and added a note explaining why EU HY credit (0.46%) underperforms the EU 10Y bond (2.96%) despite carrying a spread premium.
 
 Write-Up Revision: Instructed AI to cross-check all markdown write-ups against actual numerical outputs and revise any incorrect claims. 
