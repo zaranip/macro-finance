@@ -3,7 +3,7 @@
 We used Claude (Sonnet/Opus) as a coding and writing assistant throughout this assignment. Notes on what we asked for and how we used the output:
 
 ## Data sources / NDL switch
-We initially used yfinance for ETF and index data. We then asked the AI to migrate the notebook to **NASDAQ Data Link `QUOTEMEDIA/PRICES`** (one of our entitled subscriptions: SPY, HYG, DBC, IEF). The AI adapted the data-fetching layer (`ndl.get_table` with paginated calls and adjusted-close columns) and noted that QUOTEMEDIA's last row is 2025-05-29, so the risk-parity backtest in Q8–Q10 ends there. The AI also flagged that CME fed funds futures are not in our NDL bundle and we therefore continue to use Yahoo for the single Dec-2027 ZQ quote.
+We initially used yfinance for ETF and index data. We then asked the AI to migrate the notebook to **NASDAQ Data Link `QUOTEMEDIA/PRICES`** (one of our entitled subscriptions: SPY, HYG, DBC, IEF). The AI adapted the data-fetching layer (`ndl.get_table` with paginated calls and adjusted-close columns) and noted that QUOTEMEDIA's last row is 2025-05-29, so the risk-parity backtest in Q8–Q10 ends there. The AI also flagged that CME fed funds futures are not in our NDL bundle and we therefore continue to use Databento for the single Dec-2027 ZQ quote.
 
 ## Q1 — Fed funds market pricing
 We asked the AI to suggest a clean way to read end-2027 fed-funds expectations from market data. It proposed pulling the December-2027 CBOT fed funds futures contract (`ZQZ27.CBT`) and converting price to implied rate via `100 − price`, then comparing against `DFEDTARU`/`DFEDTARL` from FRED. We adopted that suggestion.
