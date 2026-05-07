@@ -1,0 +1,6 @@
+# AI Citations — HW 3
+
+We used Claude (Anthropic, Claude Code CLI) to draft and execute `hw3.ipynb`. The session included the following prompts:
+
+1. *"Using formatting.txt and my .env file, create the framework for hw3/hw3.ipynb. Only use data sources from FRED, NASDAQ Data Link or Databento (options / derivatives only). Everything else, ask me first."*
+   — Initial scoping prompt. Claude probed the FRED API for series availability (S&P 500, BAML credit, Wilshire and gold series were truncated or missing in the public FRED API), proposed a 12-asset universe of regional equity indices (NASDAQCOM, NIKKEI225, OECD `SPASTT01*` share-price indices), a duration-approximated 10Y Treasury return from `DGS10`, the broad USD index, WTI crude, and the global all-commodities index. Macro factor selection (`INDPRO` YoY, `CPIAUCSL` YoY, ΔVIX) and the PCA / OOS lead-lag analysis structure were proposed by Claude and accepted by us with no further changes. Claude wrote the notebook (`nbformat`-built, executed via `jupyter nbconvert --execute`) end to end.
